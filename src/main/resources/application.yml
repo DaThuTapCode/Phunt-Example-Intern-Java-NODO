@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+api:
+  in: 3
+
+
+#Cau hinh ket noi Mysql
