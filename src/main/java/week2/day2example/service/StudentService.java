@@ -1,9 +1,11 @@
 package week2.day2example.service;
 
 import org.springframework.stereotype.Service;
+import week2.day2example.enumexample.StatusStudent;
 import week2.day2example.model.Student;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,9 +18,9 @@ public class StudentService {
     private List<Student> list = new ArrayList<>();
 
     public StudentService() {
-        list.add(new Student(1l, "Nguyễn Trọng Phú", "Lạng Sơn", 19));
-        list.add(new Student(2l, "Nguyễn Thị Thảo Vân", "Lạng Sơn", 19));
-        list.add(new Student(3l, "Nguyễn Thanh Thảo", "Lạng Sơn", 20));
+        list.add(new Student(1l, "Nguyễn Trọng Phú", new Date("2004/09/13"), "Lạng Sơn", 19, StatusStudent.ACTIVE));
+        list.add(new Student(2l, "Nguyễn Thị Thảo Vân", new Date("2004/11/29"), "Lạng Sơn", 19, StatusStudent.INACTIVE));
+        list.add(new Student(3l, "Nguyễn Thanh Thảo", new Date("2004/07/24"),  "Lạng Sơn", 20, StatusStudent.INACTIVE));
     }
 
     public List<Student> getAll() {
@@ -36,7 +38,6 @@ public class StudentService {
     }
 
     public Student add(Student student) {
-
         this.list.add(student);
         return student;
     }

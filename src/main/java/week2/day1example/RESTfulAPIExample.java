@@ -30,7 +30,9 @@ public class RESTfulAPIExample {
     ));
 
 
-    @GetMapping("test-get")
+    @GetMapping(
+            value = "test-get"
+    )
     public ResponseEntity<?> testGet() {
 
         System.out.println(a);
